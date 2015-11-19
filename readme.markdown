@@ -197,7 +197,7 @@ Apologies about that long table of contents, and here we go.
 - A new primitive type in ES6
 - You can create your own symbols using `var symbol = Symbol()`
 - You can add a description for debugging purposes, like `Symbol(<mark>'ponyfoo'</mark>)`
-- Symbols are immutable and unique. `Symbol()`, `Symbol()`, `Symbol('foo')` and `Symbol('foo')` are all different
+- Symbols are immutable and unique. `Symbol()`, `Symbol('foo')` and `Symbol('foo')` are all different
 - Symbols are of type `symbol`, thus: `typeof Symbol() === 'symbol'`
 - You can also create global symbols with `Symbol.for(key)`
   - If a symbol with the provided `key` already existed, you get that one back
