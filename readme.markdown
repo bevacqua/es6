@@ -280,10 +280,10 @@ Apologies about that long table of contents, and here we go.
 - A `.then` callback can transform the result of the previous branch by returning a value
 - A `.then` callback can block on another promise by returning it
 - `p.catch(fn).catch(fn)` won't do what you want -- unless what you wanted is to catch errors in the error handler
-- [`Promise.resolve(value)`](/articles/es6-promises-in-depth#using-promiseresolve-and-promisereject) creates a promise that's fulfilled with the provided `value`
-- [`Promise.reject(reason)`](/articles/es6-promises-in-depth#using-promiseresolve-and-promisereject) creates a promise that's rejected with the provided `reason`
-- [`Promise.all(...promises)`](/articles/es6-promises-in-depth#leveraging-promiseall-and-promiserace) creates a promise that settles when all `...promises` are fulfilled or 1 of them is rejected
-- [`Promise.race(...promises)`](/articles/es6-promises-in-depth#leveraging-promiseall-and-promiserace) creates a promise that settles as soon as 1 of `...promises` is settled
+- [`Promise.resolve(value)`](https://ponyfoo.com/articles/es6-promises-in-depth#using-promiseresolve-and-promisereject) creates a promise that's fulfilled with the provided `value`
+- [`Promise.reject(reason)`](https://ponyfoo.com/articles/es6-promises-in-depth#using-promiseresolve-and-promisereject) creates a promise that's rejected with the provided `reason`
+- [`Promise.all(...promises)`](https://ponyfoo.com/articles/es6-promises-in-depth#leveraging-promiseall-and-promiserace) creates a promise that settles when all `...promises` are fulfilled or 1 of them is rejected
+- [`Promise.race(...promises)`](https://ponyfoo.com/articles/es6-promises-in-depth#leveraging-promiseall-and-promiserace) creates a promise that settles as soon as 1 of `...promises` is settled
 - Use [Promisees][33] -- the promise visualization playground -- to better understand promises
 - Read [ES6 Promises in Depth][32]
 
@@ -350,20 +350,20 @@ Apologies about that long table of contents, and here we go.
   - You could [destructure](#destructuring) `var <mark>{proxy, revoke}</mark> = Proxy.revocable(target, handler)` for convenience
   - You can configure the `proxy` all the same as with `new Proxy(target, handler)`
   - After `revoke()` is called, the `proxy` will **throw** on _any operation_, making it convenient when you can't trust consumers
-- [`get`](/articles/es6-proxies-in-depth#get) -- traps `proxy.prop` and `proxy['prop']`
-- [`set`](/articles/es6-proxies-in-depth#set) -- traps `proxy.prop = value` and `proxy['prop'] = value`
-- [`has`](/articles/es6-proxy-traps-in-depth#has) -- traps `in` operator
-- [`deleteProperty`](/articles/es6-proxy-traps-in-depth#deleteproperty) -- traps `delete` operator
-- [`defineProperty`](/articles/es6-proxy-traps-in-depth#defineproperty) -- traps `Object.defineProperty` and declarative alternatives
-- [`enumerate`](/articles/es6-proxy-traps-in-depth#enumerate) -- traps `for..in` loops
-- [`ownKeys`](/articles/es6-proxy-traps-in-depth#ownkeys) -- traps `Object.keys` and related methods
-- [`apply`](/articles/es6-proxy-traps-in-depth#apply) -- traps _function calls_
-- [`construct`](/articles/morees6-proxy-traps-in-depth#construct) -- traps usage of the `new` operator
-- [`getPrototypeOf`](/articles/morees6-proxy-traps-in-depth#getprototypeof) -- traps internal calls to `[[GetPrototypeOf]]`
-- [`setPrototypeOf`](/articles/morees6-proxy-traps-in-depth#setprototypeof) -- traps calls to `Object.setPrototypeOf`
-- [`isExtensible`](/articles/morees6-proxy-traps-in-depth#isextensible) -- traps calls to `Object.isExtensible`
-- [`preventExtensions`](/articles/morees6-proxy-traps-in-depth#preventextensions) -- traps calls to `Object.preventExtensions`
-- [`getOwnPropertyDescriptor`](/articles/morees6-proxy-traps-in-depth#getownpropertydescriptor) -- traps calls to `Object.getOwnPropertyDescriptor`
+- [`get`](https://ponyfoo.com/articles/es6-proxies-in-depth#get) -- traps `proxy.prop` and `proxy['prop']`
+- [`set`](https://ponyfoo.com/articles/es6-proxies-in-depth#set) -- traps `proxy.prop = value` and `proxy['prop'] = value`
+- [`has`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#has) -- traps `in` operator
+- [`deleteProperty`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#deleteproperty) -- traps `delete` operator
+- [`defineProperty`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#defineproperty) -- traps `Object.defineProperty` and declarative alternatives
+- [`enumerate`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#enumerate) -- traps `for..in` loops
+- [`ownKeys`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#ownkeys) -- traps `Object.keys` and related methods
+- [`apply`](https://ponyfoo.com/articles/es6-proxy-traps-in-depth#apply) -- traps _function calls_
+- [`construct`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#construct) -- traps usage of the `new` operator
+- [`getPrototypeOf`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#getprototypeof) -- traps internal calls to `[[GetPrototypeOf]]`
+- [`setPrototypeOf`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#setprototypeof) -- traps calls to `Object.setPrototypeOf`
+- [`isExtensible`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#isextensible) -- traps calls to `Object.isExtensible`
+- [`preventExtensions`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#preventextensions) -- traps calls to `Object.preventExtensions`
+- [`getOwnPropertyDescriptor`](https://ponyfoo.com/articles/morees6-proxy-traps-in-depth#getownpropertydescriptor) -- traps calls to `Object.getOwnPropertyDescriptor`
 - Read [ES6 Proxies in Depth][15]
 - Read [ES6 Proxy Traps in Depth][16]
 - Read [More ES6 Proxy Traps in Depth][17]
@@ -396,49 +396,49 @@ Apologies about that long table of contents, and here we go.
 
 # `Math`
 
-- [`Math.sign`](/articles/es6-math-additions-in-depth#mathsign) -- sign function of a number
-- [`Math.trunc`](/articles/es6-math-additions-in-depth#mathtrunc) -- integer part of a number
-- [`Math.cbrt`](/articles/es6-math-additions-in-depth#mathcbrt) -- cubic root of value, or <code class='md-code md-code-inline'>∛‾value</code>
-- [`Math.expm1`](/articles/es6-math-additions-in-depth#mathexpm1) -- `e` to the `value` minus `1`, or <code class='md-code md-code-inline'>e<sup>value</sup> - 1</code>
-- [`Math.log1p`](/articles/es6-math-additions-in-depth#mathlog1p) -- natural logarithm of `value + 1`, or <code class='md-code md-code-inline'><em>ln</em>(value + 1)</code>
-- [`Math.log10`](/articles/es6-math-additions-in-depth#mathlog10) -- base 10 logarithm of `value`, or <code class='md-code md-code-inline'><em>log</em><sub>10</sub>(value)</code>
-- [`Math.log2`](/articles/es6-math-additions-in-depth#mathlog2) -- base 2 logarithm of `value`, or <code class='md-code md-code-inline'><em>log</em><sub>2</sub>(value)</code>
-- [`Math.sinh`](/articles/es6-math-additions-in-depth#mathsinh) -- hyperbolic sine of a number
-- [`Math.cosh`](/articles/es6-math-additions-in-depth#mathcosh) -- hyperbolic cosine of a number
-- [`Math.tanh`](/articles/es6-math-additions-in-depth#mathtanh) -- hyperbolic tangent of a number
-- [`Math.asinh`](/articles/es6-math-additions-in-depth#mathasinh) -- hyperbolic arc-sine of a number
-- [`Math.acosh`](/articles/es6-math-additions-in-depth#mathacosh) -- hyperbolic arc-cosine of a number
-- [`Math.atanh`](/articles/es6-math-additions-in-depth#mathatanh) -- hyperbolic arc-tangent of a number
-- [`Math.hypot`](/articles/es6-math-additions-in-depth#mathhypot) -- square root of the sum of squares
-- [`Math.clz32`](/articles/es6-math-additions-in-depth#mathclz32) -- leading zero bits in the 32-bit representation of a number
-- [`Math.imul`](/articles/es6-math-additions-in-depth#mathimul) -- _C-like_ 32-bit multiplication
-- [`Math.fround`](/articles/es6-math-additions-in-depth#mathfround) -- nearest single-precision float representation of a number
+- [`Math.sign`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathsign) -- sign function of a number
+- [`Math.trunc`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathtrunc) -- integer part of a number
+- [`Math.cbrt`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathcbrt) -- cubic root of value, or <code class='md-code md-code-inline'>∛‾value</code>
+- [`Math.expm1`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathexpm1) -- `e` to the `value` minus `1`, or <code class='md-code md-code-inline'>e<sup>value</sup> - 1</code>
+- [`Math.log1p`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathlog1p) -- natural logarithm of `value + 1`, or <code class='md-code md-code-inline'><em>ln</em>(value + 1)</code>
+- [`Math.log10`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathlog10) -- base 10 logarithm of `value`, or <code class='md-code md-code-inline'><em>log</em><sub>10</sub>(value)</code>
+- [`Math.log2`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathlog2) -- base 2 logarithm of `value`, or <code class='md-code md-code-inline'><em>log</em><sub>2</sub>(value)</code>
+- [`Math.sinh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathsinh) -- hyperbolic sine of a number
+- [`Math.cosh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathcosh) -- hyperbolic cosine of a number
+- [`Math.tanh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathtanh) -- hyperbolic tangent of a number
+- [`Math.asinh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathasinh) -- hyperbolic arc-sine of a number
+- [`Math.acosh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathacosh) -- hyperbolic arc-cosine of a number
+- [`Math.atanh`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathatanh) -- hyperbolic arc-tangent of a number
+- [`Math.hypot`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathhypot) -- square root of the sum of squares
+- [`Math.clz32`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathclz32) -- leading zero bits in the 32-bit representation of a number
+- [`Math.imul`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathimul) -- _C-like_ 32-bit multiplication
+- [`Math.fround`](https://ponyfoo.com/articles/es6-math-additions-in-depth#mathfround) -- nearest single-precision float representation of a number
 - Read [ES6 `Math` Additions in Depth][20]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 # `Array`
 
-- [`Array.from`](/articles/es6-array-extensions-in-depth#arrayfrom) -- create `Array` instances from arraylike objects like `arguments` or iterables
-- [`Array.of`](/articles/es6-array-extensions-in-depth#arrayof) -- similar to `new Array(...items)`, but without special cases
-- [`Array.prototype.copyWithin`](/articles/es6-array-extensions-in-depth#arrayprototypecopywithin) -- copies a sequence of array elements into somewhere else in the array
-- [`Array.prototype.fill`](/articles/es6-array-extensions-in-depth#arrayprototypefill) -- fills all elements of an existing array with the provided value
-- [`Array.prototype.find`](/articles/es6-array-extensions-in-depth#arrayprototypefind) -- returns the first item to satisfy a callback
-- [`Array.prototype.findIndex`](/articles/es6-array-extensions-in-depth#arrayprototypefindindex) -- returns the index of the first item to satisfy a callback
-- [`Array.prototype.keys`](/articles/es6-array-extensions-in-depth#arrayprototypekeys) -- returns an iterator that yields a sequence holding the keys for the array
-- [`Array.prototype.values`](/articles/es6-array-extensions-in-depth#arrayprototypevalues) -- returns an iterator that yields a sequence holding the values for the array
-- [`Array.prototype.entries`](/articles/es6-array-extensions-in-depth#arrayprototypeentries) -- returns an iterator that yields a sequence holding key value pairs for the array
-- [`Array.prototype[Symbol.iterator]`](/articles/es6-array-extensions-in-depth#arrayprototype-symboliterator) -- exactly the same as the [`Array.prototype.values`](/articles/es6-array-extensions-in-depth#arrayprototypevalues) method
+- [`Array.from`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayfrom) -- create `Array` instances from arraylike objects like `arguments` or iterables
+- [`Array.of`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayof) -- similar to `new Array(...items)`, but without special cases
+- [`Array.prototype.copyWithin`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypecopywithin) -- copies a sequence of array elements into somewhere else in the array
+- [`Array.prototype.fill`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypefill) -- fills all elements of an existing array with the provided value
+- [`Array.prototype.find`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypefind) -- returns the first item to satisfy a callback
+- [`Array.prototype.findIndex`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypefindindex) -- returns the index of the first item to satisfy a callback
+- [`Array.prototype.keys`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypekeys) -- returns an iterator that yields a sequence holding the keys for the array
+- [`Array.prototype.values`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypevalues) -- returns an iterator that yields a sequence holding the values for the array
+- [`Array.prototype.entries`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypeentries) -- returns an iterator that yields a sequence holding key value pairs for the array
+- [`Array.prototype[Symbol.iterator]`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototype-symboliterator) -- exactly the same as the [`Array.prototype.values`](https://ponyfoo.com/articles/es6-array-extensions-in-depth#arrayprototypevalues) method
 - Read [ES6 `Array` Extensions in Depth][21]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 # `Object`
 
-- [`Object.assign`](/articles/es6-object-changes-in-depth#objectassign) -- recursive shallow overwrite for properties from `target, ...objects`
-- [`Object.is`](/articles/es6-object-changes-in-depth#objectis) -- like using the `===` operator programmatically, but also `true` for `NaN` vs `NaN` and `+0` vs `-0`
-- [`Object.getOwnPropertySymbols`](/articles/es6-object-changes-in-depth#objectgetownpropertysymbols) -- returns all own property symbols found on an object
-- [`Object.setPrototypeOf`](/articles/es6-object-changes-in-depth#objectsetprototypeof) -- changes prototype. Equivalent to `Object.prototype.__proto__` setter
+- [`Object.assign`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectassign) -- recursive shallow overwrite for properties from `target, ...objects`
+- [`Object.is`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectis) -- like using the `===` operator programmatically, but also `true` for `NaN` vs `NaN` and `+0` vs `-0`
+- [`Object.getOwnPropertySymbols`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectgetownpropertysymbols) -- returns all own property symbols found on an object
+- [`Object.setPrototypeOf`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectsetprototypeof) -- changes prototype. Equivalent to `Object.prototype.__proto__` setter
 - See also [Object Literals](#object-literals) section
 - Read [ES6 `Object` Changes in Depth][22]
 
@@ -447,39 +447,39 @@ Apologies about that long table of contents, and here we go.
 # Strings and Unicode
 
 - String Manipulation
-  - [`String.prototype.startsWith`](/articles/es6-strings-and-unicode-in-depth#stringprototypestartswith) -- whether the string starts with `value`
-  - [`String.prototype.endsWith`](/articles/es6-strings-and-unicode-in-depth#stringprototypeendswith) -- whether the string ends in `value`
-  - [`String.prototype.includes`](/articles/es6-strings-and-unicode-in-depth#stringprototypeincludes) -- whether the string contains `value` anywhere
-  - [`String.prototype.repeat`](/articles/es6-strings-and-unicode-in-depth#stringprototyperepeat) -- returns the string repeated `amount` times
-  - [`String.prototype[Symbol.iterator]`](/articles/es6-strings-and-unicode-in-depth#stringprototype-symboliterator) -- lets you iterate over a sequence of unicode code points _(not characters)_
-- [Unicode](/articles/es6-strings-and-unicode-in-depth#unicode)
-  - [`String.prototype.codePointAt`](/articles/es6-strings-and-unicode-in-depth#stringprototypecodepointat) -- base-10 numeric representation of a code point at a given position in string
-  - [`String.fromCodePoint`](/articles/es6-strings-and-unicode-in-depth#stringfromcodepoint`) -- given `...codepoints`, returns a string made of their unicode representations
-  - [`String.prototype.normalize`](/articles/es6-strings-and-unicode-in-depth#stringprototypenormalize) -- returns a normalized version of the string's unicode representation
+  - [`String.prototype.startsWith`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototypestartswith) -- whether the string starts with `value`
+  - [`String.prototype.endsWith`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototypeendswith) -- whether the string ends in `value`
+  - [`String.prototype.includes`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototypeincludes) -- whether the string contains `value` anywhere
+  - [`String.prototype.repeat`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototyperepeat) -- returns the string repeated `amount` times
+  - [`String.prototype[Symbol.iterator]`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototype-symboliterator) -- lets you iterate over a sequence of unicode code points _(not characters)_
+- [Unicode](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#unicode)
+  - [`String.prototype.codePointAt`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototypecodepointat) -- base-10 numeric representation of a code point at a given position in string
+  - [`String.fromCodePoint`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringfromcodepoint`) -- given `...codepoints`, returns a string made of their unicode representations
+  - [`String.prototype.normalize`](https://ponyfoo.com/articles/es6-strings-and-unicode-in-depth#stringprototypenormalize) -- returns a normalized version of the string's unicode representation
 - Read [ES6 Strings and Unicode Additions in Depth][23]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 # Modules
 
-- [Strict Mode](/articles/es6-modules-in-depth#strict-mode) is turned on by default in the ES6 module system
-- ES6 modules are files that [`export`](/articles/es6-modules-in-depth#export) an API
-- [`export default value`](/articles/es6-modules-in-depth#exporting-a-default-binding) exports a default binding
-- [`export var foo = 'bar'`](/articles/es6-modules-in-depth#named-exports) exports a named binding
-- Named exports are bindings that [can be changed](/articles/es6-modules-in-depth#bindings-not-values) at any time from the module that's exporting them
-- `export { foo, bar }` exports [a list of named exports](/articles/es6-modules-in-depth#exporting-lists)
+- [Strict Mode](https://ponyfoo.com/articles/es6-modules-in-depth#strict-mode) is turned on by default in the ES6 module system
+- ES6 modules are files that [`export`](https://ponyfoo.com/articles/es6-modules-in-depth#export) an API
+- [`export default value`](https://ponyfoo.com/articles/es6-modules-in-depth#exporting-a-default-binding) exports a default binding
+- [`export var foo = 'bar'`](https://ponyfoo.com/articles/es6-modules-in-depth#named-exports) exports a named binding
+- Named exports are bindings that [can be changed](https://ponyfoo.com/articles/es6-modules-in-depth#bindings-not-values) at any time from the module that's exporting them
+- `export { foo, bar }` exports [a list of named exports](https://ponyfoo.com/articles/es6-modules-in-depth#exporting-lists)
 - `export { foo <mark>as ponyfoo</mark> }` aliases the export to be referenced as `ponyfoo` instead
 - `export { foo <mark>as default</mark> }` marks the named export as the default export
-- As [a best practice](/articles/es6-modules-in-depth#best-practices-and-export), `export default api` at the end of all your modules, where `api` is an object, avoids confusion
+- As [a best practice](https://ponyfoo.com/articles/es6-modules-in-depth#best-practices-and-export), `export default api` at the end of all your modules, where `api` is an object, avoids confusion
 - Module loading is implementation-specific, allows interoperation with CommonJS
-- [`import 'foo'`](/articles/es6-modules-in-depth#import) loads the `foo` module into the current module
-- [`import <mark>foo from</mark> 'ponyfoo'`](/articles/es6-modules-in-depth#importing-default-exports) assigns the default export of `ponyfoo` to a local `foo` variable
-- [`import {foo, bar} from 'baz'`](/articles/es6-modules-in-depth#importing-named-exports) imports named exports `foo` and `bar` from the `baz` module
+- [`import 'foo'`](https://ponyfoo.com/articles/es6-modules-in-depth#import) loads the `foo` module into the current module
+- [`import <mark>foo from</mark> 'ponyfoo'`](https://ponyfoo.com/articles/es6-modules-in-depth#importing-default-exports) assigns the default export of `ponyfoo` to a local `foo` variable
+- [`import {foo, bar} from 'baz'`](https://ponyfoo.com/articles/es6-modules-in-depth#importing-named-exports) imports named exports `foo` and `bar` from the `baz` module
 - `import {foo <mark>as bar</mark>} from 'baz'` imports named export `foo` but aliased as a `bar` variable
 - `import {default} from 'foo'` also imports the default export
 - `import {default <mark>as bar</mark>} from 'foo'` imports the default export aliased as `bar`
 - `import foo, {bar, baz} from 'foo'` mixes default `foo` with named exports `bar` and `baz` in one declaration
-- [`import * as foo from 'foo'`](/articles/es6-modules-in-depth#import-all-the-things) imports the namespace object
+- [`import * as foo from 'foo'`](https://ponyfoo.com/articles/es6-modules-in-depth#import-all-the-things) imports the namespace object
   - Contains all named exports in `foo[name]`
   - Contains the default export in `foo.default`, if a default export was declared in the module
 - Read [ES6 Modules Additions in Depth][24]
