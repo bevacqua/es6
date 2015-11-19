@@ -84,7 +84,7 @@ Apologies about that long table of contents, and here we go.
   - Assign default values like `function foo (bar=2) {}`
   - Those defaults can be objects, too `function foo (bar={ a: 1, b: 2 }) {}`
   - Destructure `bar` completely, like `function foo ({ a=1, b=2 }) {}`
-  - Default to an empty object if nothing is provided,  like `function foo ({ a=1, b=2 } <mark>= {}</mark>) {}`
+  - Default to an empty object if nothing is provided,  like `function foo ({ a=1, b=2 } = {}) {}`
 - Read [ES6 JavaScript Destructuring in Depth][3]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
@@ -147,7 +147,7 @@ Apologies about that long table of contents, and here we go.
 # Object Literals
 
 - Instead of `{ foo: foo }`, you can just do `{ foo }` -- known as a _property value shorthand_
-- Computed property names, `{ <mark>[prefix + 'Foo']</mark>: 'bar'  }`, where `prefix: 'moz'`, yields `{ mozFoo: 'bar' }`
+- Computed property names, `{ [prefix + 'Foo']: 'bar'  }`, where `prefix: 'moz'`, yields `{ mozFoo: 'bar' }`
 - You can't combine computed property names and property value shorthands, `{ [foo] }` is invalid
 - Method definitions in an object literal can be declared using an alternative, more terse syntax, `{ foo () {} }`
 - See also [`Object`](#object) section
@@ -160,9 +160,9 @@ Apologies about that long table of contents, and here we go.
 - Not _"traditional"_ classes, syntax sugar on top of prototypal inheritance
 - Syntax similar to declaring objects, `class Foo {}`
 - Instance methods _-- `new Foo().bar` --_ are declared using the short [object literal](#object-literals) syntax, `class Foo { bar () {} }`
-- Static methods _-- `Foo.isPonyFoo()` --_ need a `static` keyword prefix, `class Foo { <mark>static</mark> isPonyFoo () {} }`
+- Static methods _-- `Foo.isPonyFoo()` --_ need a `static` keyword prefix, `class Foo { static isPonyFoo () {} }`
 - Constructor method `class Foo { constructor () { /* initialize instance */ } }`
-- Prototypal inheritance with a simple syntax `class PonyFoo <mark>extends</mark> Foo {}`
+- Prototypal inheritance with a simple syntax `class PonyFoo extends Foo {}`
 - Read [ES6 Classes in Depth][8]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
@@ -186,7 +186,7 @@ Apologies about that long table of contents, and here we go.
 - Declaration of a variable by the same name will throw
 - Meant to fix mistakes where you reassign a variable and lose a reference that was passed along somewhere else
 - In ES6, **functions are block scoped**
-  - Prevents leaking block-scoped secrets through hoisting, `{ <mark>let</mark> _foo = 'secret', bar = <mark>() => _foo</mark>; }`
+  - Prevents leaking block-scoped secrets through hoisting, `{ let _foo = 'secret', bar = () => _foo; }`
   - Doesn't break user code in most situations, and typically what you wanted anyways
 - Read [ES6 Let, Const and the “Temporal Dead Zone” (TDZ) in Depth][9]
 
@@ -196,7 +196,7 @@ Apologies about that long table of contents, and here we go.
 
 - A new primitive type in ES6
 - You can create your own symbols using `var symbol = Symbol()`
-- You can add a description for debugging purposes, like `Symbol(<mark>'ponyfoo'</mark>)`
+- You can add a description for debugging purposes, like `Symbol('ponyfoo')`
 - Symbols are immutable and unique. `Symbol()`, `Symbol()`, `Symbol('foo')` and `Symbol('foo')` are all different
 - Symbols are of type `symbol`, thus: `typeof Symbol() === 'symbol'`
 - You can also create global symbols with `Symbol.for(key)`
@@ -224,7 +224,7 @@ Apologies about that long table of contents, and here we go.
 
 - Iterator and iterable protocol define how to iterate over any object, not just arrays and array-likes
 - A well-known `Symbol` is used to assign an iterator to any object
-- `var foo = { [<mark>Symbol.iterator</mark>]: iterable}`, or `foo[<mark>Symbol.iterator</mark>] = iterable`
+- `var foo = { [Symbol.iterator]: iterable}`, or `foo[Symbol.iterator] = iterable`
 - The `iterable` is a method that returns an `iterator` object that has a `next` method
 - The `next` method returns objects with two properties, `value` and `done`
   - The `value` property indicates the current value in the sequence being iterated
@@ -242,7 +242,7 @@ Apologies about that long table of contents, and here we go.
 
 # Generators
 
-- Generator functions are a special kind of _iterator_ that can be declared using the `<mark>function*</mark> generator () {}` syntax
+- Generator functions are a special kind of _iterator_ that can be declared using the `function* generator () {}` syntax
 - Generator functions use `yield` to emit an element sequence
 - Generator functions can also use `yield*` to delegate to another generator function _-- or any iterable object_
 - Generator functions return a generator object that's adheres to both the _iterable_ and _iterator_ protocols
@@ -268,7 +268,7 @@ Apologies about that long table of contents, and here we go.
 
 - Follows the [`Promises/A+`][35] specification, was widely implemented in the wild before ES6 was standarized _(e.g [`bluebird`][34])_
 - Promises behave like a tree. Add branches with `p.then(handler)` and `p.catch(handler)`
-- Create new `p` promises with `new Promise(<mark>(resolve, reject) => { /* resolver */ }</mark>)`
+- Create new `p` promises with `new Promise((resolve, reject) => { /* resolver */ })`
   - The `resolve(value)` callback will fulfill the promise with the provided `value`
   - The `reject(reason)` callback will reject `p` with a `reason` error
   - You can call those methods asynchronously, blocking deeper branches of the promise tree
@@ -347,7 +347,7 @@ Apologies about that long table of contents, and here we go.
 - Handlers are also known as traps, these terms are used interchangeably
 - You can create **revocable** proxies with `Proxy.revocable(target, handler)`
   - That method returns an object with `proxy` and `revoke` properties
-  - You could [destructure](#destructuring) `var <mark>{proxy, revoke}</mark> = Proxy.revocable(target, handler)` for convenience
+  - You could [destructure](#destructuring) `var {proxy, revoke} = Proxy.revocable(target, handler)` for convenience
   - You can configure the `proxy` all the same as with `new Proxy(target, handler)`
   - After `revoke()` is called, the `proxy` will **throw** on _any operation_, making it convenient when you can't trust consumers
 - [`get`](https://ponyfoo.com/articles/es6-proxies-in-depth#get) -- traps `proxy.prop` and `proxy['prop']`
@@ -468,16 +468,16 @@ Apologies about that long table of contents, and here we go.
 - [`export var foo = 'bar'`](https://ponyfoo.com/articles/es6-modules-in-depth#named-exports) exports a named binding
 - Named exports are bindings that [can be changed](https://ponyfoo.com/articles/es6-modules-in-depth#bindings-not-values) at any time from the module that's exporting them
 - `export { foo, bar }` exports [a list of named exports](https://ponyfoo.com/articles/es6-modules-in-depth#exporting-lists)
-- `export { foo <mark>as ponyfoo</mark> }` aliases the export to be referenced as `ponyfoo` instead
-- `export { foo <mark>as default</mark> }` marks the named export as the default export
+- `export { foo as ponyfoo }` aliases the export to be referenced as `ponyfoo` instead
+- `export { foo as default }` marks the named export as the default export
 - As [a best practice](https://ponyfoo.com/articles/es6-modules-in-depth#best-practices-and-export), `export default api` at the end of all your modules, where `api` is an object, avoids confusion
 - Module loading is implementation-specific, allows interoperation with CommonJS
 - [`import 'foo'`](https://ponyfoo.com/articles/es6-modules-in-depth#import) loads the `foo` module into the current module
-- [`import <mark>foo from</mark> 'ponyfoo'`](https://ponyfoo.com/articles/es6-modules-in-depth#importing-default-exports) assigns the default export of `ponyfoo` to a local `foo` variable
+- [`import foo from 'ponyfoo'`](https://ponyfoo.com/articles/es6-modules-in-depth#importing-default-exports) assigns the default export of `ponyfoo` to a local `foo` variable
 - [`import {foo, bar} from 'baz'`](https://ponyfoo.com/articles/es6-modules-in-depth#importing-named-exports) imports named exports `foo` and `bar` from the `baz` module
-- `import {foo <mark>as bar</mark>} from 'baz'` imports named export `foo` but aliased as a `bar` variable
+- `import {foo as bar} from 'baz'` imports named export `foo` but aliased as a `bar` variable
 - `import {default} from 'foo'` also imports the default export
-- `import {default <mark>as bar</mark>} from 'foo'` imports the default export aliased as `bar`
+- `import {default as bar} from 'foo'` imports the default export aliased as `bar`
 - `import foo, {bar, baz} from 'foo'` mixes default `foo` with named exports `bar` and `baz` in one declaration
 - [`import * as foo from 'foo'`](https://ponyfoo.com/articles/es6-modules-in-depth#import-all-the-things) imports the namespace object
   - Contains all named exports in `foo[name]`
