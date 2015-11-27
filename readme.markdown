@@ -436,7 +436,7 @@ Apologies about that long table of contents, and here we go.
 # `Object`
 
 - [`Object.assign`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectassign) -- recursive shallow overwrite for properties from `target, ...objects`
-- [`Object.is`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectis) -- like using the `===` operator programmatically, but also `true` for `NaN` vs `NaN` and `+0` vs `-0`
+- [`Object.is`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectis) -- like using the `===` operator, but `true` for `NaN` vs `NaN`, and `false` for `+0` vs `-0`
 - [`Object.getOwnPropertySymbols`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectgetownpropertysymbols) -- returns all own property symbols found on an object
 - [`Object.setPrototypeOf`](https://ponyfoo.com/articles/es6-object-changes-in-depth#objectsetprototypeof) -- changes prototype. Equivalent to `Object.prototype.__proto__` setter
 - See also [Object Literals](#object-literals) section
