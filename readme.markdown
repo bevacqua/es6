@@ -122,6 +122,7 @@ Apologies about that long table of contents, and here we go.
 - Arrow functions are bound to their lexical scope
   - `this` is the same `this` context as in the parent scope
   - `this` can't be modified with `.call`, `.apply`, or similar _"reflection"-type_ methods
+  - `arguments` is also lexically scoped to the nearest normal function; use `(...args)` for local arguments
 - Read [ES6 Arrow Functions in Depth][5]
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
