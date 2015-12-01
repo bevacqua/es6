@@ -77,8 +77,8 @@ Apologies about that long table of contents, and here we go.
 - You can alias that too. `var {foo: {bar: deep}} = { foo: { bar: 'baz' } }` gets you `deep: 'baz'`
 - Properties that aren't found yield `undefined` as usual, e.g: `var {foo} = {}`
 - Deeply nested properties that aren't found yield an error, e.g: `var {foo: {bar}} = {}`
-- It also works for arrays, `[a, b] = [0, 1]` yields `a: 0` and `b: 1`
-- You can skip items in an array, `[a, , b] = [0, 1, 2]`, getting `a: 0` and `b: 2`
+- It also works for arrays, `var [a, b] = [0, 1]` yields `a: 0` and `b: 1`
+- You can skip items in an array, `var [a, , b] = [0, 1, 2]`, getting `a: 0` and `b: 2`
 - You can swap without an _"aux"_ variable, `[a, b] = [b, a]`
 - You can also use destructuring in function parameters
   - Assign default values like `function foo (bar=2) {}`
