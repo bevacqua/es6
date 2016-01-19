@@ -111,7 +111,7 @@ Apologies about that long table of contents, and here we go.
 
 - Terse way to declare a function like `param => returnValue`
 - Useful when doing functional stuff like `[1, 2].map(x => x * 2)`
-- Several flavors are available, might take you some getting used to
+- Several flavors are available, might take you some time getting used to
   - `p1 => expr` is okay for a single parameter
   - `p1 => expr` has an implicit `return` statement for the provided `expr` expression
   - To return an object implicitly, wrap it in parenthesis `() => ({ foo: 'bar' })` or you'll get **an error**
