@@ -267,7 +267,7 @@ Apologies about that long table of contents, and here we go.
 
 # Promises
 
-- Follows the [`Promises/A+`][35] specification, was widely implemented in the wild before ES6 was standarized _(e.g [`bluebird`][34])_
+- Follows the [`Promises/A+`][35] specification, was widely implemented in the wild before ES6 was standardized _(e.g [`bluebird`][34])_
 - Promises behave like a tree. Add branches with `p.then(handler)` and `p.catch(handler)`
 - Create new `p` promises with `new Promise((resolve, reject) => { /* resolver */ })`
   - The `resolve(value)` callback will fulfill the promise with the provided `value`
