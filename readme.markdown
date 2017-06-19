@@ -246,7 +246,7 @@ Apologies about that long table of contents, and here we go.
 - Generator functions are a special kind of _iterator_ that can be declared using the `function* generator () {}` syntax
 - Generator functions use `yield` to emit an element sequence
 - Generator functions can also use `yield*` to delegate to another generator function _-- or any iterable object_
-- Generator functions return a generator object that's adheres to both the _iterable_ and _iterator_ protocols
+- Generator functions return a generator object that adheres to both the _iterable_ and _iterator_ protocols
   - Given `g = generator()`, `g` adheres to the iterable protocol because `g[Symbol.iterator]` is a method
   - Given `g = generator()`, `g` adheres to the iterator protocol because `g.next` is a method
   - The iterator for a generator object `g` is the generator itself: `g[Symbol.iterator]() === g`
